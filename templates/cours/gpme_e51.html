@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="macos-window macos-card p-8 rounded-macos">
+    <h1 class="text-3xl font-bold mb-6 text-macos-text">{{ matiere }}</h1>
+    <p class="text-macos-accent-gray text-xl mb-6">{{ description }}</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-macos shadow-macos-light">
+            <h2 class="text-2xl font-semibold mb-4">Compétences</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Analyse financière approfondie</li>
+                <li>Diagnostic stratégique</li>
+                <li>Évaluation des performances</li>
+            </ul>
+        </div>
+        <div class="bg-white p-6 rounded-macos shadow-macos-light">
+            <h2 class="text-2xl font-semibold mb-4">Modules</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Comptabilité analytique</li>
+                <li>Stratégie financière</li>
+                <li>Contrôle de gestion</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

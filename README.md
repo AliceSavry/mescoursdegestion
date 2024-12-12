@@ -1,17 +1,21 @@
-# Mes Cours de Gestion
+# Mes Cours de Gestion - ASY Formation
 
 ## Description
-Un site web moderne et professionnel pour les cours de gestion, offrant un accès facile à différents domaines de formation.
+Site web de formation en gestion pour BTS GPME, développé avec Django et Tailwind CSS.
 
-## Sous-domaines
-- BTS GPME - Gestion Financière (6 thèmes)
-- GPME - EBP (3 thèmes)
-- GPME - Gestion des risques (3 thèmes)
-- MCO - Gestion opérationnelle (6 thèmes)
+## Prérequis
+- Python 3.9+
+- pip
+- virtualenv (recommandé)
 
 ## Installation
 
 1. Cloner le repository
+```bash
+git clone https://github.com/AliceSavry/mescoursdegestion.git
+cd mescoursdegestion
+```
+
 2. Créer un environnement virtuel
 ```bash
 python3 -m venv venv
@@ -23,7 +27,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Initialiser la base de données
+4. Configurer la base de données
 ```bash
 python manage.py migrate
 ```
@@ -33,7 +37,17 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Fonctionnalités
+- Cours de GPME E6
+- Cours de GPME E51
+- Cours de GPME EBP
+- Cours de MCO E5
+
 ## Technologies
-- Backend: Django
-- Frontend: Tailwind CSS
-- Design: Moderne et professionnel
+- Django
+- Tailwind CSS
+- HTML5
+- JavaScript
+
+## Licence
+Propriété d'ASY Formation
