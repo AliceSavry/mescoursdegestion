@@ -51,7 +51,8 @@ body {
 }
 
 .sidebar-logo img {
-    width: 120px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
