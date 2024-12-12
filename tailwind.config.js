@@ -10,14 +10,36 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-primary': '#2C3E50',    // Un bleu professionnel
-        'brand-secondary': '#34495E',  // Un bleu légèrement plus clair
-        'accent': '#3498DB',           // Un bleu vif pour les éléments interactifs
-        'background': '#F4F6F7',       // Un gris très clair pour le fond
+        // Palette macOS
+        'macos-background': '#F5F5F5',       // Gris clair de fond
+        'macos-sidebar': '#EAEAEA',          // Gris des barres latérales
+        'macos-text': '#2C2C2C',             // Texte noir
+        'macos-accent-blue': '#0A84FF',      // Bleu d'accentuation
+        'macos-accent-gray': '#A2A2A7',      // Gris neutre
+        'macos-window': 'rgba(255,255,255,0.85)', // Fond de fenêtre translucide
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['San Francisco', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
+      boxShadow: {
+        'macos-light': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'macos-heavy': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      },
+      borderRadius: {
+        'macos': '12px',  // Coins arrondis typiques de macOS
+      },
+      backdropBlur: {
+        'macos': '20px',  // Effet de flou pour la transparence
+      },
+      animation: {
+        'macos-bounce': 'bounce 1s infinite',
+      },
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10%)' },
+        }
+      }
     },
   },
   plugins: [],
