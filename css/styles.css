@@ -43,6 +43,7 @@ body {
 
 .sidebar-logo {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
@@ -50,9 +51,8 @@ body {
 }
 
 .sidebar-logo img {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: 120px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
