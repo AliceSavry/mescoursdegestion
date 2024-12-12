@@ -31,15 +31,6 @@ module.exports = {
       backdropBlur: {
         'macos': '20px',  // Effet de flou pour la transparence
       },
-      animation: {
-        'macos-bounce': 'bounce 1s infinite',
-      },
-      keyframes: {
-        bounce: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10%)' },
-        }
-      }
     },
   },
   plugins: [],

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Cours de Gestion</title>
+    <link href="https://fonts.googleapis.com/css2?family=San+Francisco:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'San Francisco', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-macos-background text-macos-text">
+    <header class="macos-window backdrop-blur-macos shadow-macos-light py-4">
+        <div class="container mx-auto flex items-center justify-between px-6">
+            <div class="flex items-center space-x-4">
+                <img src="/static/images/logo.png" alt="Logo ASY Formation" class="h-16 w-16 rounded-macos">
+                <h1 class="text-3xl font-semibold text-macos-text">Mes Cours de Gestion</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-macos-accent-blue hover:underline">Accueil</a></li>
+                    <li><a href="#" class="text-macos-accent-blue hover:underline">Formations</a></li>
+                    <li><a href="#" class="text-macos-accent-blue hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="macos-window backdrop-blur-macos shadow-macos-light py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p class="text-macos-accent-gray">&copy; 2024 ASY Formation. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
