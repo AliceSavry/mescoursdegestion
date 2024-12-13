@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T1C1 - Bienvenue en gestion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            text-align: justify;
+        }
+        .app-container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        .sidebar {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 250px;
+        }
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+        .sidebar-section h3 {
+            margin-top: 0;
+        }
+        .sidebar-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-section li {
+            margin-bottom: 10px;
+        }
+        .sidebar-section a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+        .sidebar-section a:hover {
+            color: #23527c;
+        }
+        .content-wrapper {
+            flex: 1;
+            padding: 20px;
+        }
+        .resource-btn {
+            background-color: #337ab7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .resource-btn:hover {
+            background-color: #23527c;
+        }
+        .return-btn {
+            background-color: #337ab7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .return-btn:hover {
+            background-color: #23527c;
+        }
+        
+        @media print {
+            .sidebar {
+                display: none !important;
+                visibility: hidden !important;
+                position: absolute !important;
+                left: -9999px !important;
+            }
+            
+            .content-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                float: none !important;
+            }
+            
+            .app-container {
+                display: block !important;
+            }
+
+            .resource-btn {
+                display: none !important;
+            }
+            .return-btn {
+                display: none !important;
+            }
+            iframe {
+                width: 100% !important;
+                height: auto !important;
+            }
+            .print-image {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Sommaire</h3>
+                <ul>
+                    <li><a href="#comment-joue-on">Comment joue-t-on?</a></li>
+                    <li><a href="#tenue-du-tableau">Tenue du tableau de bord</a></li>
+                    <li><a href="https://view.genially.com/66d4bb271779704991a30b47/interactive-content-bienvenue-en-gestion" target="_blank">Plateau de jeu</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Référentiel</h3>
+                <ul>
+                    <li><strong>Domaine d'activités 1 :</strong> Développement de la relation client et vente conseil</li>
+                    <li><strong>Bloc de compétences 1 :</strong> Développer la relation client et assurer la vente conseil</li>
+                    <li><strong>Compétences clés :</strong>
+                        <ul>
+                            <li>Rechercher des clients par prospection ou pour répondre à un appel d'offres.</li>
+                            <li>Maintenir et développer la relation avec les clients.</li>
+                            <li>Suivre la qualité de services et fidéliser la clientèle.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Ressources</h3>
+                <button class="resource-btn" onclick="window.open('documents/T1C1 doc 1.pdf')">Tableau de Bord</button>
+                <button class="resource-btn" onclick="window.open('documents/T1C1 doc 2.pdf')">Tableau de Synthèse</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <h1>T1C1 - Bienvenue en gestion</h1>
+            
+            <div class="game-rules">
+                <h2 id="comment-joue-on">Comment joue-t-on?</h2>
+                <p>Les principes du jeu sont faciles. D'abord, il faut sélectionner une équipe (cotillons, ballons, cœurs, mains, fusée ou nuage).</p>
+                <p>Chaque équipe démarre avec 100 euros en caisse, et doit gérer son entreprise au mieux.</p>
+                <p>Chaque équipe lance le dé à son tour, et avance son pion du nombre de cases indiqué.</p>
+                <p>Selon la case sur laquelle vous tombez, vous devez ouvrir l'avion associé à la case s'il y en a un.</p>
+                <p>Vous devez alors lire le message à voix haute, et appliquer les consignes qui y figurent.</p>
+
+                <h2 id="tenue-du-tableau">Tenue du tableau de bord</h2>
+                <p>Vous devez noter toutes vos opérations sur votre tableau de bord.</p>
+                <p>Enfin, vous devez absolument, à chaque tour, vérifier que votre trésorerie finale est bien identique à la caisse physique que vous avez dans les mains.</p>
+                <p>Bonne chance, et développez au mieux votre entreprise !</p>
+
+                <div class="print-content">
+                    <h2>Le plateau de jeu</h2>
+                    <div style="width: 100%;">
+                        <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+                            <iframe title="Bienvenue en Gestion !" frameborder="0" width="100%" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/66d4bb271779704991a30b47" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <a href="../index.html" class="return-btn">Retour à l'écran principal</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

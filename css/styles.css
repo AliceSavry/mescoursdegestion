@@ -55,6 +55,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
+    text-align: justify;
 }
 
 .app-container {
@@ -62,16 +63,117 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar Styles */
 .sidebar {
     width: 280px;
     background-color: var(--bg-secondary);
+    padding: 20px;
     border-right: 1px solid var(--border-color);
-    padding: 30px 20px;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    height: 100vh;
     overflow-y: auto;
+    font-size: 0.9em;
+    color: #333333;
 }
 
+.content-wrapper {
+    margin-left: 280px;
+    flex: 1;
+    padding: 20px;
+}
+
+.sidebar-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-section h3 {
+    color: var(--text-primary);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-section li {
+    margin-bottom: 8px;
+}
+
+.sidebar-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.sidebar-section a:hover {
+    background-color: var(--hover-color);
+    color: var(--text-primary);
+}
+
+.resource-btn {
+    display: block;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #ffffff !important; /* Forcer la couleur du texte en blanc */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-weight: bold; /* Rendre le texte plus visible */
+}
+
+.resource-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar .resource-btn {
+    background-color: #4CAF50 !important; /* Vert */
+    color: white !important;
+    border: none !important;
+    font-weight: bold !important;
+    width: 90% !important;
+    margin: 5px auto !important;
+    display: block !important;
+    text-align: center;
+    padding: 10px;
+}
+
+.sidebar .resource-btn:hover {
+    background-color: #45a049 !important;
+}
+
+.tableau-bord-btn, .tableau-synthese-btn {
+    background: linear-gradient(to right, #4CAF50, #FF69B4, #8A2BE2) !important; /* Mélange de vert, rose et violet */
+    color: white !important;
+    border: none !important;
+    font-weight: bold !important;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.tableau-bord-btn:hover, .tableau-synthese-btn:hover {
+    background: linear-gradient(to right, #45a049, #FF1493, #7B68EE) !important;
+}
+
+/* Sidebar Styles */
 .sidebar-logo {
     display: flex;
     justify-content: center;
@@ -312,6 +414,47 @@ body {
 .chapter-list li:nth-child(3) { --item-index: 3; }
 .chapter-list li:nth-child(4) { --item-index: 4; }
 
+.chapter-summary, .reference-section {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.chapter-summary:hover, .reference-section:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chapter-summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.reference-section {
+    background-color: #e9ecef;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.game-rules, .chapter-summary, .reference-section {
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-summary h2, .reference-section h2 {
+    color: #007bff;
+}
+
+.resource-downloads h3 {
+    color: #28a745;
+}
+
 /* Couleurs spécifiques pour chaque matière */
 [data-section="gpme-e51"] .theme-section h3 {
     color: var(--e51-color);
@@ -440,6 +583,10 @@ button[type="submit"] {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 40px; /* Ajout d'une hauteur fixe pour les boutons */
+    font-size: 16px; /* Ajout d'une taille de police pour les boutons */
+    line-height: 20px; /* Ajout d'une hauteur de ligne pour les boutons */
+    text-align: center;
 }
 
 button[type="submit"]:hover {
@@ -511,4 +658,158 @@ button[type="submit"]:hover {
     right: 0;
     bottom: 0;
     z-index: 1;
+}
+
+.game-rules {
+    text-align: justify;
+}
+
+/* Styles d'impression */
+@media print {
+    .sidebar, .return-btn {
+        display: none !important;
+    }
+    
+    .content-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Masquer le plateau de jeu à l'impression */
+    .container-wrapper-genially {
+        display: none !important;
+    }
+
+    /* Styles de base pour l'impression */
+    body {
+        font-size: 12pt;
+        line-height: 1.3;
+    }
+
+    h1, h2 {
+        page-break-after: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+}
+
+.container-wrapper-genially {
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    left: 0 !important;
+    height: auto !important;
+    visibility: visible !important; /* Ajuster les styles du conteneur Genially pour s'assurer qu'il est visible */
+}
+
+.genially-embed {
+    width: 100% !important;
+    height: 600px !important; /* Assurer une hauteur suffisante pour le plateau */
+    margin: 0 !important;
+    position: relative !important;
+}
+
+.return-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #45a049;
+}
+
+.mac-tabs {
+    display: flex;
+    gap: 0;
+    background: #f0f0f0;
+    padding: 10px 10px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.mac-tab {
+    padding: 8px 16px;
+    background: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #d0d0d0;
+    border-bottom: none;
+    margin-right: -1px;
+}
+
+.mac-tab:hover, .mac-tab.active {
+    background: #ffffff;
+    position: relative;
+}
+
+.mac-tab-content {
+    display: none;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mac-tab-content.active {
+    display: block;
+}
+
+.mac-tab-content ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.mac-tab-content li {
+    margin-bottom: 8px;
+}
+
+.resource-downloads {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(to bottom, #4f8ff0, #3b7add);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    height: 40px; /* Ajout d'une hauteur fixe pour les boutons */
+    font-size: 16px; /* Ajout d'une taille de police pour les boutons */
+    line-height: 20px; /* Ajout d'une hauteur de ligne pour les boutons */
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #5a99f5, #4084e3);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.print-image {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100vh !important; /* Limiter la hauteur pour éviter la troncature */
+    object-fit: contain; /* Conserver le ratio d'aspect */
 }
