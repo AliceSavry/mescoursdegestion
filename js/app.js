@@ -44,20 +44,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeSections = document.querySelectorAll('.theme-section');
     
     themeSections.forEach(section => {
-        // Au survol
-        section.addEventListener('mouseenter', function() {
-            // Fermer tous les autres thèmes
-            themeSections.forEach(s => {
-                if (s !== this) {
-                    s.classList.remove('active');
+        const title = section.querySelector('h3');
+        
+        // Au clic sur le titre
+        title.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Fermer les autres sections
+            themeSections.forEach(otherSection => {
+                if (otherSection !== section) {
+                    otherSection.classList.remove('active');
                 }
             });
-            this.classList.add('active');
-        });
-
-        // Au clic (pour mobile)
-        section.addEventListener('click', function() {
-            this.classList.toggle('active');
+            
+            // Basculer la section actuelle
+            section.classList.toggle('active');
         });
     });
 
@@ -137,4 +139,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     }
+
+    // Gestionnaire pour les menus contextuels
+    const chapterLinks = document.querySelectorAll('.chapter-link');
+    
+    chapterLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Fermer tous les autres menus
+            document.querySelectorAll('.context-menu').forEach(menu => {
+                if (menu !== this.nextElementSibling) {
+                    menu.classList.remove('show');
+                }
+            });
+            
+            // Basculer le menu actuel
+            const menu = this.nextElementSibling;
+            menu.classList.toggle('show');
+        });
+    });
+    
+    // Fermer le menu si on clique ailleurs
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.chapter-item')) {
+            document.querySelectorAll('.context-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+    });
 });
