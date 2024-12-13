@@ -17,23 +17,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Gestion de la navigation
-    const sidebarItems = document.querySelectorAll('.sidebar-item');
-    const sections = document.querySelectorAll('.content-section');
-
-    sidebarItems.forEach(item => {
-        item.addEventListener('click', function(e) {
+    // Gestion des liens de navigation
+    document.querySelectorAll('[data-section]').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Retirer la classe active de tous les éléments
-            sidebarItems.forEach(i => i.classList.remove('active'));
-            sections.forEach(s => s.classList.remove('active'));
+            // Retirer la classe active de tous les liens
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.classList.remove('active');
+            });
             
-            // Ajouter la classe active à l'élément cliqué
+            // Ajouter la classe active au lien cliqué
             this.classList.add('active');
             
+            // Masquer toutes les sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
             // Afficher la section correspondante
-            const targetSection = document.getElementById(this.dataset.section);
+            const targetSection = document.getElementById(this.getAttribute('data-section'));
             if (targetSection) {
                 targetSection.classList.add('active');
             }
@@ -41,22 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Gestion des thèmes
-    const themeSections = document.querySelectorAll('.theme-section');
-    
-    themeSections.forEach(section => {
-        // Au survol
-        section.addEventListener('mouseenter', function() {
-            // Fermer tous les autres thèmes
-            themeSections.forEach(s => {
-                if (s !== this) {
-                    s.classList.remove('active');
-                }
-            });
-            this.classList.add('active');
-        });
-
-        // Au clic (pour mobile)
-        section.addEventListener('click', function() {
+    document.querySelectorAll('.theme-section').forEach(theme => {
+        theme.addEventListener('click', function() {
             this.classList.toggle('active');
         });
     });
