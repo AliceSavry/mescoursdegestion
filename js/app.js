@@ -84,10 +84,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Ici, vous pourrez ajouter la logique d'envoi du formulaire
-            alert('Message envoyé ! Nous vous répondrons dans les plus brefs délais.');
-            this.reset();
+            // Le formulaire est maintenant géré par FormSubmit
+            // Nous ajoutons juste une notification visuelle
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = 'Envoi en cours...';
+            button.disabled = true;
+
+            // Réinitialiser le bouton après 2 secondes
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
         });
     }
 });
