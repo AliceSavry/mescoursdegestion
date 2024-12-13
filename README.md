@@ -10,11 +10,25 @@ Site pédagogique pour les étudiants en BTS GPME et MCO.
 
 - **BTS GPME**
   - E5.1 - Gestion des risques
-  - E4 - Relation client/fournisseur
   - E6 - Développement PME
+    - Thème 1 - La comptabilité
+    - Thème 2 - L'analyse du bilan
+    - Thème 3 - L'analyse du compte de résultat
+    - Thème 4 - Le projet d'investissement
+    - Thème 5 - Suivre l'activité de la PME
+    - Thème 6 - Révision
+  - EBP
+    - 1 - Fiche de procédure
+    - 2 - Exercices
 
 - **BTS MCO**
   - E5 - Gestion Opérationnelle
+    - Thème 1 - Les documents et calculs commerciaux
+    - Thème 2 - La budgétisation et le suivi d'activité
+    - Thème 3 - L'analyse du compte de résultat
+    - Thème 4 - L'analyse du bilan
+    - Thème 5 - L'investissement
+    - Thème 6 - Révisions
 
 - **Outils et Ressources**
   - Documents
