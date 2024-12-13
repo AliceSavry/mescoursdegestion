@@ -22,6 +22,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Gestion des thèmes
+    const themeSections = document.querySelectorAll('.theme-section');
+    
+    themeSections.forEach(section => {
+        // Au survol
+        section.addEventListener('mouseenter', function() {
+            // Fermer tous les autres thèmes
+            themeSections.forEach(s => {
+                if (s !== this) {
+                    s.classList.remove('active');
+                }
+            });
+            this.classList.add('active');
+        });
+
+        // Au clic (pour mobile)
+        section.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+
     // Exemple de données pour les actualités
     const news = [
         {
