@@ -10,7 +10,7 @@ Site pédagogique pour les étudiants en BTS GPME et MCO.
 
 - **BTS GPME**
   - E5.1 - Gestion des risques
-  - E6 - Développement PME
+  - E4/E6 - Gestion financière de la PME
     - Thème 1 - La comptabilité
     - Thème 2 - L'analyse du bilan
     - Thème 3 - L'analyse du compte de résultat
